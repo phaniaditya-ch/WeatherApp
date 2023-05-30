@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import Context from '../context/Context';
 
 function Home() {
+
+    const name = useContext(Context);
+    console.log("name: ", name);
     return (
         <>
             <div className='main-content'>

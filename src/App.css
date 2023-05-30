@@ -1,24 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Poppins:ital,wght@0,200;0,300;0,500;1,300&family=Puritan:wght@400;700&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Poppins:ital,wght@0,200;0,300;0,500;0,800;0,900;1,300&family=Puritan:wght@400;700&family=Roboto+Condensed&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
+  color: var(--secondary-color);
 }
 
-.wrapper{
+@media (max-width: 900px) {
+  .navbar-link {
+    display: none;
+  }
+}
+
+.heading-link {
+  text-decoration: none;
+  color: var(--secondary-color)
+}
+
+.heading-link h1 {
+  font-weight: 300;
+  position: relative;
+  transform: translateY(7%);
+}
+
+.toggle-switch {
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  top: 0.2em;
+}
+
+.light-theme {
+  --primary-color: #f5f5f5;
+  --secondary-color: #1a1a1a;
+  --para-color: #ffe9d6;
+  --heading-color: #131313;
+}
+
+.dark-theme {
+  --primary-color: #2f2f2f;
+  --secondary-color: #f5f5f5;
+  --para-color: rgb(11, 11, 11);
+  --heading-color: #f5f5f5
+}
+
+
+body {
+  background-color: var(--primary-color);
+}
+
+.wrapper {
   width: 100%;
 }
 
-.logo{
+.logo {
   height: 100%;
   object-fit: cover;
 }
 
-.logo-div{
+.logo-div {
   border: 2px red solid;
 }
 
-.navbar-container{
+.navbar-container {
   width: 100vw;
   height: 4.4875em;
   background-color: rgba(175, 208, 255, 0.63);
@@ -27,11 +71,14 @@
   flex-direction: row;
 }
 
-.navbar-links{
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -ms-flexbox; /* TWEENER - IE 10 */
-  display: -webkit-flex; /* NEW - Chrome */
-  display: flex; 
+.navbar-links {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
   justify-content: center;
   align-items: center;
   /* border: 1px red solid; */
@@ -46,30 +93,41 @@
 }
 
 
-.navbar-links::-webkit-scrollbar{
+.navbar-links::-webkit-scrollbar {
   display: none;
 }
 
-body{
+body {
   font-family: poppins;
   color: rgb(50, 50, 50);
 }
 
-.page-heading{
+.heading {
+  /* text-align: center;
+  align-items: center; */
+  position: relative;
+  top: 50%;
+  /* -webkit-transform: translateY(-50%); */
+  /* -ms-transform: translateY(-50%); */
+  transform: translateY(-40%);
+}
+
+.page-heading {
   text-decoration: underline;
   text-align: center;
   padding: 0.5em;
 }
 
-.mid-para{
+.mid-para {
   text-align: center;
   max-width: 100ch;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 8vh
+  margin-top: 8vh;
+  background-color: var(--para-color);
 }
 
-.main-content{
+.main-content {
   margin-left: 10vw;
   margin-right: 10vw;
   margin-top: 0;
@@ -78,7 +136,7 @@ body{
   height: 86.5vh;
 }
 
-.card-div{
+.card-div {
   width: 18em;
   margin: 0 auto;
   padding: 0.5em;
@@ -87,7 +145,7 @@ body{
   max-width: 40rem;
 }
 
-.card-container{
+.card-container {
   /* text-align: center; */
   display: flex;
   flex-direction: column;
@@ -96,30 +154,32 @@ body{
   /* align-items: center; */
 }
 
-th, td{
-  border: 1px solid green;
+table {
+  max-width: 50vw;
 }
 
-th{
-  padding: 0em 0.5em 0.2em 0.5em; 
+th,
+td {
+  border: 1px solid var(--secondary-color);
+  padding: 0.2em 1em 0.2em 1em;
 }
 
-.table-div{
+.table-div {
   padding: 1em;
   margin: 0 auto;
 }
 
-.image{
+.image {
   margin: 0 auto;
   width: 50%;
 }
 
-.image-div{
+.image-div {
   display: flex;
   justify-content: center;
 }
 
-.navbar-link{
+.navbar-link {
   background-color: rgba(0, 0, 255, 0);
   color: white;
   text-decoration: none;
@@ -134,11 +194,11 @@ th{
   transition: all 0.2s;
 }
 
-.navbar-link:hover{
-  background-color: rgb(0, 123, 255);
+.navbar-link:hover {
+  background-color: rgb(13, 110, 253)
 }
 
-.form-div{
+.form-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -148,11 +208,11 @@ th{
   padding: 3rem;
 }
 
-.form-div label{
+.form-div label {
   margin-bottom: 1rem;
 }
 
-.button{
+.button {
   margin-top: 1em;
   width: 10%;
   height: 3rem;
@@ -164,23 +224,23 @@ th{
   font-weight: bold;
 }
 
-.home-button-div{
+.home-button-div {
   text-align: center;
 }
 
-.const{
+.const {
   text-align: center;
   align-items: center;
   margin-top: 10vh;
 }
 
-.const-image{
+.const-image {
   margin: 0 auto;
   width: 30vw;
-  
+
 }
 
-.const-image-div{
+.const-image-div {
   text-align: center;
   padding: 2rem;
 }

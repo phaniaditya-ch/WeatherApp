@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Wcard from './Wcard';
+import { useContext } from 'react';
+import Context from '../context/Context';
 
 function Search() {
 
+	const props = useContext(Context);
 	let [value, setValue] = useState("");
 	let [items, setItems] = useState([]);
 	const handleChange = (event) => {
@@ -15,7 +18,7 @@ function Search() {
 			.then((res) => {
 				if (res.ok) {
 					return res.json();
-				}	
+				}
 				else {
 					throw new Error('Not found, enter valid details');
 				}
@@ -33,6 +36,9 @@ function Search() {
 	}
 
 	const handleClick = () => {
+		let dup = props.state;
+		dup.name = value;
+		props.update(dup);
 		getAttributes(value);
 	}
 
